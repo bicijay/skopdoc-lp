@@ -157,21 +157,25 @@ export default function Navbar() {
                         </Popover.Group>
                         <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
                             {session ?
-                                <a href="/account" className="flex-shrink-0 group block">
-                                    <div className="flex items-center">
-                                        <div>
+                                <Link href="/account" passHref={true}>
+                                    <a className="flex-shrink-0 group block">
+                                        <div className="flex items-center">
+                                            <div>
       <span className="inline-block h-8 w-8 rounded-full overflow-hidden bg-gray-100">
         <svg className="h-full w-full text-gray-300" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
+          <path
+              d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z"/>
         </svg>
       </span>
+                                            </div>
+                                            <div className="ml-3 w-36">
+                                                <p className="text-sm font-medium text-gray-700 group-hover:text-gray-900 max-w-12 truncate">{session.user.email}</p>
+                                                <p className="text-xs font-medium text-gray-500 group-hover:text-gray-700">Gerenciar
+                                                    minha conta</p>
+                                            </div>
                                         </div>
-                                        <div className="ml-3 w-36">
-                                            <p className="text-sm font-medium text-gray-700 group-hover:text-gray-900 max-w-12 truncate">{session.user.email}</p>
-                                            <p className="text-xs font-medium text-gray-500 group-hover:text-gray-700">Gerenciar minha conta</p>
-                                        </div>
-                                    </div>
-                                </a> :
+                                    </a>
+                                </Link> :
                                 <a
                                     href="#"
                                     onClick={() => setShowLoginModal(true)}
@@ -243,21 +247,25 @@ export default function Navbar() {
                                 </div>
                                 <div>
                                     {session ?
-                                        <a href="/account" className="flex-shrink-0 group block">
-                                            <div className="flex items-center">
-                                                <div>
+                                        <Link href="/account" passHref={true}>
+                                            <a className="flex-shrink-0 group block">
+                                                <div className="flex items-center">
+                                                    <div>
       <span className="inline-block h-8 w-8 rounded-full overflow-hidden bg-gray-100">
         <svg className="h-full w-full text-gray-300" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
+          <path
+              d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z"/>
         </svg>
       </span>
+                                                    </div>
+                                                    <div className="ml-3">
+                                                        <p className="text-xs font-medium text-gray-700 group-hover:text-gray-900">{session.user.email}</p>
+                                                        <p className="text-xs font-medium text-gray-500 group-hover:text-gray-700">Gerenciar
+                                                            minha conta</p>
+                                                    </div>
                                                 </div>
-                                                <div className="ml-3">
-                                                    <p className="text-xs font-medium text-gray-700 group-hover:text-gray-900">{session.user.email}</p>
-                                                    <p className="text-xs font-medium text-gray-500 group-hover:text-gray-700">Gerenciar minha conta</p>
-                                                </div>
-                                            </div>
-                                        </a> :
+                                            </a>
+                                        </Link> :
                                         <a
                                             href="#"
                                             onClick={() => setShowLoginModal(true)}

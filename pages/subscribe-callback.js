@@ -51,8 +51,7 @@ const SubscribeCallbackPage = () => {
 
                                 {status === 'success' ?
                                     <p className="mt-2 text-center text-sm text-gray-600">
-                                        O pagamento está sendo analisado. Seu plano será ativado dentro dos próximos
-                                        minutos...
+                                        O pagamento está sendo analisado. Seu plano será ativado minutos após o pagamento...
                                     </p> :
                                     <p className="mt-2 text-center text-sm text-gray-600">
                                         Ocorreu um erro na hora do pagamento. Realize o processo novamente com uma nova

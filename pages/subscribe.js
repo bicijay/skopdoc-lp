@@ -44,6 +44,7 @@ const SubscribePage = () => {
             return;
         }
 
+        console.log('test');
         setCurrentStep(stepId);
     }
 
