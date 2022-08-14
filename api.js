@@ -2,7 +2,7 @@ import axios from "axios";
 import {supabaseClient} from "./supabase";
 
 export const skopdocApi = axios.create({
-    baseURL: 'http://localhost:3000/'
+    baseURL: process.env.NEXT_PUBLIC_API_KEY
 });
 
 skopdocApi.interceptors.request.use(
