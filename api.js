@@ -1,0 +1,19 @@
+import axios from "axios";
+import {supabaseClient} from "./supabase";
+
+export const skopdocApi = axios.create({
+    baseURL: 'http://localhost:3000/'
+});
+
+skopdocApi.interceptors.request.use(
+    config => {
+        if (supabaseClient.auth?.session()?.access_token) {
+            config.headers['x-auth-token'] = supabaseClient.auth?.session()?.access_token;
+        }
+
+        return config;
+    },
+    error => {
+        return Promise.reject(error);
+    }
+);
